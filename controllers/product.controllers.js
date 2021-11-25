@@ -1,6 +1,7 @@
 import asyncHandler from "express-async-handler";
 import Product from "../models/Product.js";
 
+
 // @desc    Get all products
 // @route   GET /products
 // @access  Public
@@ -56,7 +57,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create a product
-// @route   POST /products
+// @route   POST /products/add
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
@@ -77,7 +78,7 @@ const createProduct = asyncHandler(async (req, res) => {
 });
 
 // @desc    Update a product
-// @route   PUT /api/products/:id
+// @route   PUT /products/:id
 // @access  Private/Admin
 const updateProduct = asyncHandler(async (req, res) => {
   const { name, price, description, image, brand, category, countInStock } =
@@ -103,7 +104,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create new review
-// @route   POST /api/products/:id/reviews
+// @route   POST /products/:id/reviews
 // @access  Private
 const createProductReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body;
