@@ -1,8 +1,8 @@
 import asyncHandler from "express-async-handler";
 import Product from "../models/Product.js";
 
-// @desc    Fetch all products
-// @route   GET /api/products
+// @desc    Get all products
+// @route   GET /products
 // @access  Public
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 28;
@@ -26,8 +26,8 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
-// @desc    Fetch single product
-// @route   GET /api/products/:id
+// @desc    Get single product
+// @route   GET /products/:id
 // @access  Public
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
@@ -41,7 +41,7 @@ const getProductById = asyncHandler(async (req, res) => {
 });
 
 // @desc    Delete a product
-// @route   DELETE /api/products/:id
+// @route   DELETE /products/:id
 // @access  Private/Admin
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
@@ -56,19 +56,19 @@ const deleteProduct = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create a product
-// @route   POST /api/products
+// @route   POST /products
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: " ",
     price: 0,
     user: req.user._id,
-    image: "/images/sample.jpg",
-    brand: "Nike",
+    image: "/uploads/sample.jpg",
+    brand: " ",
     category: " ",
-    countInStock: 12,
-    numReviews: 6,
-    rating: 5,
+    countInStock: 10,
+    numReviews: 0,
+    rating: 0,
     description: " ",
   });
 
