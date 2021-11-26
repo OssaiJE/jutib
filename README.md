@@ -6,6 +6,7 @@
 
 - User registration and login API
 - Product reviews and ratings API
+- Export products data to CSV API
 - Top products API
 - Product pagination
 - User and Admin profile

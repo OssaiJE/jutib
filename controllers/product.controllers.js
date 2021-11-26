@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
+import csvcreator from "json2csv";
 import Product from "../models/Product.js";
-
 
 // @desc    Get all products
 // @route   GET /products
@@ -25,6 +25,17 @@ const getProducts = asyncHandler(async (req, res) => {
     .skip(pageSize * (page - 1));
 
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
+});
+
+// @desc    Export all products to csv
+// @route   GET /products/csv
+// @access  Public
+const products2csv = asyncHandler(async (req, res) => {
+  const json2csv = new csvcreator.Parser();
+  const products = await Product.find({});
+  let productcsv = json2csv.parse(products);
+//   console.log(productcsv);
+  res.send(JSON.stringify(productcsv));
 });
 
 // @desc    Get single product
@@ -155,6 +166,7 @@ const getTopProducts = asyncHandler(async (req, res) => {
 
 export {
   getProducts,
+  products2csv,
   getProductById,
   deleteProduct,
   createProduct,

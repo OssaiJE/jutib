@@ -3,6 +3,7 @@ import multer from "multer";
 const router = express.Router();
 import {
   getProducts,
+  products2csv,
   getProductById,
   deleteProduct,
   createProduct,
@@ -43,7 +44,9 @@ const upload = multer({
   },
 });
 
-router.route("/").get(getProducts).post(protect, admin, createProduct);
+router.route("/").get(getProducts);
+
+router.route("/csv").get(products2csv);
 
 router
   .route("/add")
