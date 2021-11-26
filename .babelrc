@@ -1,7 +1,3 @@
 {
-  "presets": ["@babel/present-env"],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread"
-  ]
+  "presets": ["@babel/present-env"]
 }

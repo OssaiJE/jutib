@@ -3,7 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
-// import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+import { notFound, errorHandler } from "./middleware/error.middleware.js";
 import connectDB from "./config/db.js";
 
 import productRoutes from "./routes/product.routes.js";
@@ -36,8 +36,8 @@ app.use("/users", userRoutes);
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3031;
 

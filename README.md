@@ -41,15 +41,15 @@ npm run start
 You can use the following commands to seed the database with some sample users and products as well as destroy all data
 
 ```
-# Seed data
+# Seed database
 npm run data:import
 
-# Destroy data
+# Destroy database
 npm run data:destroy
 ```
 
-<!-- ```
-Sample User Logins
+```
+Sample User Logins after seeding
 
 admin@example.com (Admin)
 123456
@@ -59,6 +59,6 @@ john@example.com (Customer)
 
 jane@example.com (Customer)
 123456
-``` -->
+```
 
 
