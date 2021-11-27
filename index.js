@@ -8,6 +8,7 @@ import connectDB from "./config/db.js";
 
 import productRoutes from "./routes/product.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import anagram from "./routes/anagram.js";
 
 //  Load config file
 dotenv.config({ path: "./config/config.env" });
@@ -32,6 +33,7 @@ app.use(express.json());
 
 app.use("/products", productRoutes);
 app.use("/users", userRoutes);
+app.use("/anagram", anagram);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
