@@ -13,6 +13,7 @@
 - Admin product management API
 - Admin user management API
 - Database seeder (products & users)
+- Anagram endpoint controller GET /anagram
 
 ## Usage
 
@@ -23,6 +24,7 @@ Rename the config.env.txt file in the /config folder.
 ### Install Dependencies
 
 At Jutib folder, run
+
 ```
 npm install
 ```
@@ -61,5 +63,3 @@ john@example.com (Customer)
 jane@example.com (Customer)
 123456
 ```
-
-

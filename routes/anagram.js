@@ -1,6 +1,8 @@
 import express from "express";
 const router = express.Router();
 
+
+// Anagram controller
 const groupAnagrams = (strs) => {
   let result = {};
   for (let word of strs) {
