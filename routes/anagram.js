@@ -21,7 +21,7 @@ const groupAnagrams = (strs) => {
 router.get("/", async (req, res) => {
   try {
     let output = groupAnagrams(["ate", "map", "eat", "pat", "tea", "tap"]);
-    console.log(output);
+    // console.log(output);
     res.send(output);
   } catch (err) {
     console.error(err);

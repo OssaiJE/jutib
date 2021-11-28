@@ -9,6 +9,7 @@ import connectDB from "./config/db.js";
 import productRoutes from "./routes/product.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import anagram from "./routes/anagram.js";
+import factorial from "./routes/factorial.js";
 
 //  This code was written so fast, it got little to no review before pushing to github.
 // This was due to the limited time of 24hrs deadline, given time, it can be refractored.
@@ -37,6 +38,7 @@ app.use(express.json());
 app.use("/products", productRoutes);
 app.use("/users", userRoutes);
 app.use("/anagram", anagram);
+app.use("/factorial", factorial);
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));

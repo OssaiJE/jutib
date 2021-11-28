@@ -14,6 +14,7 @@
 - Admin user management API
 - Database seeder (products & users)
 - Anagram endpoint controller GET /anagram
+- Facorial endpoint controller GET /factorial
 
 ## Usage
 
