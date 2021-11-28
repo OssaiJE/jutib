@@ -10,6 +10,9 @@ import productRoutes from "./routes/product.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import anagram from "./routes/anagram.js";
 
+//  This code was written so fast, it got little to no review before pushing to github.
+// This was due to the limited time of 24hrs deadline, given time, it can be refractored.
+
 //  Load config file
 dotenv.config({ path: "./config/config.env" });
 
